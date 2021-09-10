@@ -1,7 +1,7 @@
 package coffeemachine.controls;
 
 public interface Machine {
-    boolean checkMachine() throws Exception;
+    void checkMachine() throws Exception;
     void takeMoney();
     void prepareWater();
     void grind();

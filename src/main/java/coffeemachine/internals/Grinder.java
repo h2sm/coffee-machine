@@ -3,7 +3,9 @@ package coffeemachine.internals;
 public class Grinder extends Device {
 
     @Override
-    public boolean checkInternal()  {
+    public boolean checkInternal() throws Exception {
+        var check = super.checkInternal();
+        System.out.println("Grinder working - " + check);
         return super.checkInternal();
     }
 

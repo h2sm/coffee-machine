@@ -12,8 +12,11 @@ public class MachineImpl implements Machine  {
     }
 
 
-    public boolean checkMachine() {
-        devices.forEach(Device::checkInternal);
+    public void checkMachine() throws Exception {
+        for (int i = 0; i < devices.size(); i++) {
+            var device = devices.get(i).checkInternal();
+        }
+
     }
 
     @Override

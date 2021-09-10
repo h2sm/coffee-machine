@@ -13,9 +13,15 @@ public class Main {
         var coffeeList= Init.makeList();
         var devicesList = Init.makeDevicesList();
         var machine = new MachineImpl(devicesList);
+        try {
+            machine.checkMachine();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         System.out.println("Coffee machine emulator. Select what to drink: [1-4]");
-        var scanner = new Scanner(System.in);
-        var position = Integer.parseInt(scanner.nextLine());
+//        var scanner = new Scanner(System.in);
+//        var position = Integer.parseInt(scanner.nextLine());
 
     }
 

@@ -3,7 +3,9 @@ package coffeemachine.internals;
 public class Pump extends Device{
 
     @Override
-    public boolean checkInternal()  {
+    public boolean checkInternal() throws Exception {
+        var check = super.checkInternal();
+        System.out.println("Pump - " + check);
         return super.checkInternal();
     }
 
