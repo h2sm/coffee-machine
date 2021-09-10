@@ -1,7 +1,7 @@
 package coffeemachine.drinks;
 
 public interface Drink {
-    void orderADrink();
-    void processing();
-    void takeADrink();
+    String returnName();
+    int returnPrice();
+
 }
