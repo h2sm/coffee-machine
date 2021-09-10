@@ -13,9 +13,11 @@ public class MachineImpl implements Machine  {
 
 
     public void checkMachine() throws Exception {
+        System.out.println("Checking systems....");
         for (int i = 0; i < devices.size(); i++) {
             var device = devices.get(i).checkInternal();
         }
+        System.out.println("Everything works correctly.");
 
     }
 

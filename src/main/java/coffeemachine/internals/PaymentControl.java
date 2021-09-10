@@ -4,7 +4,7 @@ public class PaymentControl extends Device{
     @Override
     public boolean checkInternal() throws Exception {
         var check = super.checkInternal();
-        System.out.println("Payment - " + check);
+        System.out.println("Payment working - " + check);
         return super.checkInternal();
     }
 

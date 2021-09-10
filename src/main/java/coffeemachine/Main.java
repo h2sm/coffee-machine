@@ -1,28 +1,35 @@
 package coffeemachine;
+
 import coffeemachine.controls.MachineImpl;
-import coffeemachine.internals.Grinder;
-import coffeemachine.internals.Mixer;
-import coffeemachine.internals.PaymentControl;
-import coffeemachine.internals.Pump;
+import coffeemachine.drinks.Drink;
+import coffeemachine.internals.Device;
 import coffeemachine.settings.Init;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Main {
-    public static void main(String[] args) {
-        var coffeeList= Init.makeList();
-        var devicesList = Init.makeDevicesList();
-        var machine = new MachineImpl(devicesList);
-        try {
-            machine.checkMachine();
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+    private static ArrayList<Drink> coffeeList;
+    private static ArrayList<Device> devices;
+
+    public static void main(String[] args) throws Exception {
+        init();
+        var machine = new MachineImpl(devices);
+        machine.checkMachine();
         System.out.println("Coffee machine emulator. Select what to drink: [1-4]");
-//        var scanner = new Scanner(System.in);
-//        var position = Integer.parseInt(scanner.nextLine());
+
+        var scanner = new Scanner(System.in);
+        var position = Integer.parseInt(scanner.nextLine());
+
+
 
     }
+
+    private static void init() {
+        coffeeList = Init.makeList();
+        devices = Init.makeDevicesList();
+    }
+
 
 }

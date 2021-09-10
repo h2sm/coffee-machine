@@ -5,7 +5,7 @@ public class Pump extends Device{
     @Override
     public boolean checkInternal() throws Exception {
         var check = super.checkInternal();
-        System.out.println("Pump - " + check);
+        System.out.println("Pump working - " + check);
         return super.checkInternal();
     }
 
