@@ -1,7 +1,6 @@
 package coffeemachine.internals;
 
-public class Pump extends Device{
-
+public class PaymentControl extends Device{
     @Override
     public boolean checkInternal() throws Exception {
         return super.checkInternal();
@@ -9,6 +8,6 @@ public class Pump extends Device{
 
     @Override
     public void start() {
-        System.out.println("Pumping liquids to a mug.");
+        System.out.println("Sum was holded");
     }
 }
