@@ -1,10 +1,11 @@
 package coffeemachine.settings;
 
 import coffeemachine.drinks.*;
+import coffeemachine.internals.*;
 
 import java.util.ArrayList;
 
-public class DrinksInit {
+public class Init {
     public static ArrayList <Drink> makeList(){
         var coffeeList = new ArrayList<Drink>();
         coffeeList.add(new Americano());
@@ -12,5 +13,13 @@ public class DrinksInit {
         coffeeList.add(new Latte());
         coffeeList.add(new Russiano());
         return coffeeList;
+    }
+    public static ArrayList<Device> makeDevicesList(){
+        var devicesList = new ArrayList<Device>();
+        devicesList.add(new Grinder());
+        devicesList.add(new Mixer());
+        devicesList.add(new PaymentControl());
+        devicesList.add(new Pump());
+        return devicesList;
     }
 }

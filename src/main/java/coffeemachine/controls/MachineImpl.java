@@ -2,22 +2,18 @@ package coffeemachine.controls;
 
 import coffeemachine.internals.*;
 
+import java.util.ArrayList;
+
 public class MachineImpl implements Machine  {
 
-    private Grinder grinder;
-    private Mixer mixer;
-    private PaymentControl paymentControl;
-    private Pump pump;
-    public MachineImpl(Grinder grinder, Mixer mixer, PaymentControl paymentControl, Pump pump) {
-        this.grinder = grinder;
-        this.mixer = mixer;
-        this.paymentControl = paymentControl;
-        this.pump = pump;
+    private ArrayList<Device> devices;
+    public MachineImpl(ArrayList<Device> devices) {
+        this.devices = devices;
     }
 
-    @Override
-    public void checkMachine() {
 
+    public boolean checkMachine() {
+        devices.forEach(Device::checkInternal);
     }
 
     @Override
