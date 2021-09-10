@@ -1,6 +1,19 @@
 package coffeemachine.controls;
 
-public class MachineImpl implements Machine{
+import coffeemachine.internals.*;
+
+public class MachineImpl implements Machine  {
+
+    private Grinder grinder;
+    private Mixer mixer;
+    private PaymentControl paymentControl;
+    private Pump pump;
+    public MachineImpl(Grinder grinder, Mixer mixer, PaymentControl paymentControl, Pump pump) {
+        this.grinder = grinder;
+        this.mixer = mixer;
+        this.paymentControl = paymentControl;
+        this.pump = pump;
+    }
 
     @Override
     public void checkMachine() {
