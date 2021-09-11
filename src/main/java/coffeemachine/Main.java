@@ -2,6 +2,7 @@ package coffeemachine;
 
 import coffeemachine.addons.Milk;
 import coffeemachine.addons.Sugar;
+import coffeemachine.controls.Machine;
 import coffeemachine.controls.MachineImpl;
 import coffeemachine.drinks.Drink;
 import coffeemachine.internals.Device;
@@ -20,30 +21,47 @@ public class Main {
         // TODO: 11.09.2021 раскидать все по классам, метод слишком много делает + дописать логику машины 
         try {
             var machine = new MachineImpl(devices);
-            System.out.println("Checking systems....");
-            machine.checkMachine();
-            System.out.println("Everything works correctly.");
-            System.out.println("Coffee machine emulator. Select what to drink: [1-4]");
-            order.showAllOptions()
-                    .forEach(drink ->
-                            System.out.println(drink.returnName() + " costs " + drink.returnPrice()));
-            //
-            var position = Integer.parseInt(scanner.nextLine());
-            var chosenDrink = order.chooseDrink(position);
+            check(machine);
+            var item = selectItem();
+            var chosenDrink = order.chooseDrink(item);
             System.out.println("You chose " + chosenDrink.returnPrice() + " - " + chosenDrink.returnName());
-            System.out.println("Add sugar? Y/N");
-            if (scanner.nextLine().equals("Y")) {
-                chosenDrink = order.addSugar(chosenDrink);
-                System.out.println(chosenDrink.returnPrice() + " - " + chosenDrink.returnName());
-            }
-            System.out.println("Add milk? Y/N");
-            if (scanner.nextLine().equals("Y")) {
-                chosenDrink = order.addMilk(chosenDrink);
-                System.out.println(chosenDrink.returnPrice() + " - " + chosenDrink.returnName());
-            }
+            chosenDrink = requestSugar(chosenDrink);
+            chosenDrink = requestMilk(chosenDrink);
+            System.out.println(chosenDrink.returnName() + ": pay " + chosenDrink.returnPrice());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    public static void check(Machine machine) throws Exception {
+        System.out.println("Checking systems....");
+        machine.checkMachine();
+        System.out.println("Everything works correctly.");
+    }
+
+    public static int selectItem() {
+        System.out.println("Coffee machine emulator. Select what to drink: [1-4]");
+        order.showAllOptions()
+                .forEach(drink ->
+                        System.out.println(drink.returnName() + " costs " + drink.returnPrice()));
+        return Integer.parseInt(scanner.nextLine());
+    }
+
+    public static Drink requestSugar(Drink drink) {
+        System.out.println("Add sugar? (+20 rub) Y/N");
+        if (scanner.nextLine().equals("Y")) {
+            drink = order.addSugar(drink);
+            return drink;
+        } else return drink;
+    }
+
+    public static Drink requestMilk(Drink drink) {
+        System.out.println("Add milk? (+30 rub) Y/N");
+        if (scanner.nextLine().equals("Y")) {
+            drink = order.addMilk(drink);
+            return drink;
+        } else return drink;
     }
 }
