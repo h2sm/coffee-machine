@@ -8,16 +8,12 @@ import coffeemachine.settings.Init;
 import java.util.ArrayList;
 
 public class OrderDrinks implements Order {
-    private final ArrayList<Drink> drinks;
-
-    public OrderDrinks() {
-        drinks = Init.makeList();
-    }
+    private final ArrayList<Drink> drinks = Init.makeList();
 
     @Override
     public Drink chooseDrink(int number) throws Exception {
         number = number - 1;
-        if (drinks.size() <= number) return drinks.get(number);
+        if (number <=drinks.size()) return drinks.get(number);
         else throw new Exception("There is no such a drink");
     }
 
