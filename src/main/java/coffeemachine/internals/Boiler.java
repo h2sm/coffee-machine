@@ -1,5 +1,7 @@
 package coffeemachine.internals;
 
+import coffeemachine.drinks.Drink;
+
 public class Boiler extends Device{
     @Override
     public boolean checkInternal() throws Exception {
@@ -7,8 +9,8 @@ public class Boiler extends Device{
     }
 
     @Override
-    public void start() {
-        System.out.println("Started boiling water.");
+    public void start(Drink drink) {
+        System.out.println("Started boiling water for " + drink.returnName() + " with temperature of " + drink.getTemperature());
     }
 
     @Override

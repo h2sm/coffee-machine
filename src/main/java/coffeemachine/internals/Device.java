@@ -1,5 +1,7 @@
 package coffeemachine.internals;
 
+import coffeemachine.drinks.Drink;
+
 public abstract class Device {
 
     public boolean checkInternal() throws Exception{
@@ -9,7 +11,7 @@ public abstract class Device {
         // мало ли, вдруг не работает штука какая-то, добавлю реализма.
     }
 
-    public abstract void start();
+    public abstract void start(Drink drink);
 
     public abstract void stop();
 }

@@ -1,5 +1,7 @@
 package coffeemachine.internals;
 
+import coffeemachine.drinks.Drink;
+
 public class PaymentControl extends Device{
     @Override
     public boolean checkInternal() throws Exception {
@@ -9,7 +11,7 @@ public class PaymentControl extends Device{
     }
 
     @Override
-    public void start() {
+    public void start(Drink drink) {
         System.out.println("Sum was holded");
     }
 

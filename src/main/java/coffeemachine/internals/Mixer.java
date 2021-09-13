@@ -1,5 +1,7 @@
 package coffeemachine.internals;
 
+import coffeemachine.drinks.Drink;
+
 public class Mixer extends Device{
 
     @Override
@@ -10,7 +12,7 @@ public class Mixer extends Device{
     }
 
     @Override
-    public void start() {
+    public void start(Drink drink) {
         System.out.println("Mixing up everything!");
     }
 

@@ -25,28 +25,29 @@ public class MachineImpl implements Machine {
 
     @Override
     public void receiveOrder(Drink drink) {
-
+        this.drink = drink;
+        System.out.println("Received an order: " + this.drink.returnName());
     }
 
     @Override
-    public void takeMoney(int sum) {
-
+    public boolean takeMoney(int sum) {
+        return drink.returnPrice() >= sum;
     }
 
 
     @Override
     public void prepareWater() {
-        boiler.start();
+        boiler.start(drink);
     }
 
     @Override
     public void grind() {
-        grinder.start();
+        grinder.start(drink);
     }
 
     @Override
     public void mix() {
-        mixer.start();
+        mixer.start(drink);
     }
 
     @Override
