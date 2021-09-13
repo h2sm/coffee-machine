@@ -5,7 +5,7 @@ import coffeemachine.addons.Sugar;
 import coffeemachine.controls.Machine;
 import coffeemachine.controls.MachineImpl;
 import coffeemachine.drinks.Drink;
-import coffeemachine.internals.Device;
+import coffeemachine.internals.*;
 import coffeemachine.logics.OrderDrinks;
 import coffeemachine.settings.Init;
 
@@ -20,8 +20,8 @@ public class Main {
     public static void main(String[] args) {
         // TODO: 13.09.2021 добавь "эквайринг". ну или хотя бы чтобы сумму можно было ввести типа заплатил
         try {
-            var machine = new MachineImpl(devices);
-            check(machine);
+            var machine = new MachineImpl(new Boiler(), new Grinder(), new Mixer(), new PaymentControl(), new Pump());
+            machine.checkMachine();
             var item = selectItem();
             var chosenDrink = order.chooseDrink(item);
             System.out.println("You chose " + chosenDrink.returnPrice() + " - " + chosenDrink.returnName());
@@ -33,6 +33,7 @@ public class Main {
 
 
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Sorry, an exception: " + e.getMessage());
         }
 
