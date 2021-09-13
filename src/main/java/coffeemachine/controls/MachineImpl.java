@@ -26,7 +26,6 @@ public class MachineImpl implements Machine {
     @Override
     public void receiveOrder(Drink drink) {
         this.drink = drink;
-//        System.out.println("Received an order: " + this.drink.returnName());
     }
 
     @Override
@@ -49,9 +48,13 @@ public class MachineImpl implements Machine {
     public void mix() {
         mixer.start(drink);
     }
+    public void pour(){
+        pump.start(drink);
+    }
 
     @Override
     public void returnCoffee() {
         System.out.println("Ready. Enjoy your " + drink.returnName() + " with " + drink.getTemperature() + " temperature.");
+
     }
 }

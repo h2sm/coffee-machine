@@ -13,7 +13,7 @@ public class Pump extends Device{
 
     @Override
     public void start(Drink drink) {
-        System.out.println("Pumping liquids to a mug.");
+        System.out.println("Pumping "+ drink.returnName() + " to a mug.");
     }
 
     @Override

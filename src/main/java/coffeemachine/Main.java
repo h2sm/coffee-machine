@@ -23,6 +23,7 @@ public class Main {
             machine.prepareWater();
             machine.grind();
             machine.mix();
+            machine.pour();
             machine.returnCoffee();
 
 
