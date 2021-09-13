@@ -52,6 +52,6 @@ public class MachineImpl implements Machine {
 
     @Override
     public void returnCoffee() {
-
+        System.out.println("Ready. Enjoy your " + drink.returnName() + " with " + drink.getTemperature() + " temperature.");
     }
 }

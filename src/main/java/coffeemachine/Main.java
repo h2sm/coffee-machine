@@ -25,6 +25,7 @@ public class Main {
             machine.prepareWater();
             machine.grind();
             machine.mix();
+            machine.returnCoffee();
 
 
         } catch (Exception e) {
