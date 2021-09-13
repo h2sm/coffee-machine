@@ -19,4 +19,9 @@ public class Sugar implements Addons {
     public int returnPrice() {
         return drink.returnPrice() + 20;
     }
+
+    @Override
+    public int getTemperature() {
+        return drink.getTemperature();
+    }
 }

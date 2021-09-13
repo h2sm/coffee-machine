@@ -26,12 +26,12 @@ public class MachineImpl implements Machine {
     @Override
     public void receiveOrder(Drink drink) {
         this.drink = drink;
-        System.out.println("Received an order: " + this.drink.returnName());
+//        System.out.println("Received an order: " + this.drink.returnName());
     }
 
     @Override
-    public boolean takeMoney(int sum) {
-        return drink.returnPrice() >= sum;
+    public void takeMoney() {
+        paymentControl.start(drink);
     }
 
 

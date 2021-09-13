@@ -13,7 +13,7 @@ public class Grinder extends Device {
 
     @Override
     public void start(Drink drink) {
-        System.out.println("Grinding coffee beans.Zhhhhhh.....");
+        System.out.println("Grinding coffee beans for " + drink.returnName() + ".Zhhhhhh.....");
     }
 
     @Override

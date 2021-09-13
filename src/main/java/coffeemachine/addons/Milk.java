@@ -18,4 +18,9 @@ public class Milk implements Addons {
     public int returnPrice() {
         return drink.returnPrice() + 30;
     }
+
+    @Override
+    public int getTemperature() {
+        return drink.getTemperature();
+    }
 }
