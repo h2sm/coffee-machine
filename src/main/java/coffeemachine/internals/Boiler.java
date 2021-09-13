@@ -1,21 +1,18 @@
 package coffeemachine.internals;
 
-public class Pump extends Device{
-
+public class Boiler extends Device{
     @Override
     public boolean checkInternal() throws Exception {
-        var check = super.checkInternal();
-        System.out.println("Pump working - " + check);
         return super.checkInternal();
     }
 
     @Override
     public void start() {
-        System.out.println("Pumping liquids to a mug.");
+        System.out.println("Started boiling water.");
     }
 
     @Override
     public void stop() {
-        System.out.println("Pump turned off.");
+        System.out.println("Boiler turned off.");
     }
 }

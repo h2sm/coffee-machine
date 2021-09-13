@@ -20,6 +20,7 @@ public class Init {
         devicesList.add(new Mixer());
         devicesList.add(new PaymentControl());
         devicesList.add(new Pump());
+        devicesList.add(new Boiler());
         return devicesList;
     }
 }

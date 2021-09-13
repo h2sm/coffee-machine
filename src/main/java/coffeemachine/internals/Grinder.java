@@ -16,6 +16,6 @@ public class Grinder extends Device {
 
     @Override
     public void stop() {
-
+        System.out.println("Grinder turned off.");
     }
 }

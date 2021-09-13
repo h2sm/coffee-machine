@@ -15,6 +15,6 @@ public class PaymentControl extends Device{
 
     @Override
     public void stop() {
-
+        System.out.println("Payment panel turned off");
     }
 }

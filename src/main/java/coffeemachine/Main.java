@@ -18,7 +18,7 @@ public class Main {
     private static final OrderDrinks order = new OrderDrinks();
 
     public static void main(String[] args) {
-        // TODO: 11.09.2021 раскидать все по классам, метод слишком много делает + дописать логику машины 
+        // TODO: 13.09.2021 добавь "эквайринг". ну или хотя бы чтобы сумму можно было ввести типа заплатил
         try {
             var machine = new MachineImpl(devices);
             check(machine);
@@ -27,10 +27,13 @@ public class Main {
             System.out.println("You chose " + chosenDrink.returnPrice() + " - " + chosenDrink.returnName());
             chosenDrink = requestSugar(chosenDrink);
             chosenDrink = requestMilk(chosenDrink);
-            System.out.println(chosenDrink.returnName() + ": pay " + chosenDrink.returnPrice());
+            System.out.println(chosenDrink.returnName() + ": please pay " + chosenDrink.returnPrice());
+            System.out.println("**Do nothing**");
+            Thread.sleep(300);
+
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Sorry, an exception: " + e.getMessage());
         }
 
     }

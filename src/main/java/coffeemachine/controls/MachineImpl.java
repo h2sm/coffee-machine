@@ -15,7 +15,7 @@ public class MachineImpl implements Machine {
 
     @Override
     public void takeMoney() {
-
+        System.out.println("Received a sum.");
     }
 
     @Override

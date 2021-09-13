@@ -16,6 +16,6 @@ public class Mixer extends Device{
 
     @Override
     public void stop() {
-
+        System.out.println("Mixer turned off");
     }
 }
