@@ -14,13 +14,4 @@ public class Init {
         coffeeList.add(new Russiano());
         return coffeeList;
     }
-    public static ArrayList<Device> makeDevicesList(){
-        var devicesList = new ArrayList<Device>();
-        devicesList.add(new Grinder());
-        devicesList.add(new Mixer());
-        devicesList.add(new PaymentControl());
-        devicesList.add(new Pump());
-        devicesList.add(new Boiler());
-        return devicesList;
-    }
 }
