@@ -19,13 +19,15 @@ public class OrderDrinks implements Order {
 
     @Override
     public Drink addSugar(Drink drink) {
-        drink = new Sugar(drink);
+        System.out.println("Add sugar? (+20 rub) Y/N");
+        if (Keypad.getLine().equals("Y")) drink = new Sugar(drink);
         return drink;
     }
 
     @Override
     public Drink addMilk(Drink drink) {
-        drink = new Milk(drink);
+        System.out.println("Add milk? (+30 rub) Y/N");
+        if (Keypad.getLine().equals("Y")) drink = new Milk(drink);
         return drink;
     }
 

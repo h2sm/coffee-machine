@@ -1,12 +1,9 @@
 package coffeemachine;
 
-import coffeemachine.controls.Machine;
 import coffeemachine.controls.MachineImpl;
-import coffeemachine.drinks.Drink;
 import coffeemachine.internals.*;
 import coffeemachine.logics.Keypad;
 import coffeemachine.logics.OrderDrinks;
-import coffeemachine.logics.Requests;
 
 
 public class Main {
@@ -19,8 +16,8 @@ public class Main {
             var item = showOptions();
             var chosenDrink = order.chooseDrink(item);
             System.out.println("You chose " + chosenDrink.returnPrice() + " - " + chosenDrink.returnName());
-            chosenDrink = Requests.offerSugar(chosenDrink);
-            chosenDrink = Requests.offerMilk(chosenDrink);
+            chosenDrink = order.addSugar(chosenDrink);
+            chosenDrink = order.addMilk(chosenDrink);
             machine.receiveOrder(chosenDrink);
             machine.takeMoney();
             machine.prepareWater();
