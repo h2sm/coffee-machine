@@ -9,5 +9,6 @@ public interface Machine {
     void prepareWater();
     void grind();
     void mix();
+    void pour();
     void returnCoffee();
 }

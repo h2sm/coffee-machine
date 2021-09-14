@@ -16,8 +16,7 @@ public class MachineImpl implements Machine {
         this.pump = pump;
     }
 
-    public void checkMachine() throws Exception {//через рефлексию вызываю метод проверки оборудования.
-        //просто вызывать 5 раз один и тот же метод - не очень выглядит
+    public void checkMachine() throws Exception {
         var classes = new Reflections("coffeemachine.internals").getSubTypesOf(Device.class);
         for (Class<? extends Device> innerClass : classes)
             innerClass.getDeclaredMethod("checkInternal").invoke(innerClass.getDeclaredConstructor().newInstance());
@@ -48,7 +47,9 @@ public class MachineImpl implements Machine {
     public void mix() {
         mixer.start(drink);
     }
-    public void pour(){
+
+    @Override
+    public void pour() {
         pump.start(drink);
     }
 
